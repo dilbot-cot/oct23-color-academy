@@ -10,7 +10,8 @@ export function generateTones(baseColour, themeName = ""){
     let rawPalettenOutput = paletten(baseColour)
     let finalisedOutput = {
         name: newThemeName,
-        colours: []
+        colours: [],
+        displayName: themeName || colorblender(baseColour).name()
     };
 
     let formattedColoursList = Object.keys(rawPalettenOutput).map((key) => {
