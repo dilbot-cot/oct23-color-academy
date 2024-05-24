@@ -1,10 +1,12 @@
+
 import { useEffect, useState } from "react";
 import { useBaseColourGlobalData, useBaseColourGlobalDispatch } from "../contexts/baseColourContext";
 import { Sketch } from "@uiw/react-color";
 import { useCurrentThemeData } from "../contexts/currentThemeContext";
+import { ColourBlock } from "../components/ColourBlock";
 import PureModal from 'react-pure-modal';
 import 'react-pure-modal/dist/react-pure-modal.min.css';
-import ColourBlock from "../components/ColourBlock";
+import { CssCodeExport } from "../components/CssCodeExport";
 
 
 export default function GeneratorPage(){
@@ -38,19 +40,18 @@ export default function GeneratorPage(){
 				header={currentTheme.displayName}
 				footer={
 					<div>
-					<button>Cancel</button>
-					<button>Save</button>
+					<h6>Thankyou for generating some colours!</h6>
 					</div>
 				}
 				isOpen={modal}
-				closeButton="close"
+				closeButton="X"
 				closeButtonPosition="bottom"
 				onClose={() => {
 					setModal(false);
 					return true;
 				}}
-				>
-				<p>Your content</p>
+			>
+				<CssCodeExport />
 			</PureModal>
 			<button onClick={() => setModal(!modal)}>
 				Toggle Modal

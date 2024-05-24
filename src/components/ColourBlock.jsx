@@ -1,5 +1,5 @@
 
-export default function ColourBlock({colourEntry}) {
+export function ColourBlock({colourEntry}) {
 
     return (
         <div className="colourBlock" style={{backgroundColor: colourEntry.hex}}>
